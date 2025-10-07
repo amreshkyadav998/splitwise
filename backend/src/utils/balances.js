@@ -10,18 +10,8 @@ function getDisplayName(expense, userId, fallbackName) {
 
 function calculateBalances(expenses) {
   const net = new Map(); // name -> net amount (positive means others owe them)
-  
-  console.log('Processing expenses for balance calculation:', expenses.length);
 
   for (const exp of expenses) {
-    console.log('Processing expense:', { 
-      description: exp.description, 
-      amount: exp.amount, 
-      paidBy: exp.paidBy, 
-      paidByName: exp.paidByName,
-      participants: exp.participants,
-      participantNames: exp.participantNames 
-    });
     // Handle both Level 1 (names) and Level 2 (user objects) data
     const participants = exp.participants && exp.participants.length > 0 ? exp.participants : (exp.participantNames || []);
     
@@ -68,7 +58,6 @@ function calculateBalances(expenses) {
     if (creditors[j].amount < 0.01) j++;
   }
 
-  console.log('Final settlements:', settlements);
   return settlements;
 }
 
