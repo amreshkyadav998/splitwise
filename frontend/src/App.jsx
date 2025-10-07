@@ -18,7 +18,7 @@ export default function App() {
           {/* Logo */}
           <div className="flex items-center gap-2">
             <div className="h-8 w-8 rounded bg-blue-600" />
-            <h1 className="text-xl font-semibold">Splitwise Clone</h1>
+            <NavLink to="/"><h1 className="text-xl font-semibold">Splitwise Clone</h1></NavLink>
           </div>
 
           {/* Desktop Nav */}
